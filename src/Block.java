@@ -42,4 +42,10 @@ public class Block <T>{
 		
 	}
 	
+	public String toString(){
+		return "{" + " index: " + this.index + ", data: " + this.data + ", timeStamp" + 
+				this.timeStamp + ", prevHash: " + this.previousHash + ", Hash: " + this.hash + " } \n";
+	}
+	
+	
 }

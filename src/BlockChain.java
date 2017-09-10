@@ -27,4 +27,29 @@ public class BlockChain <T>{
 		newBlock.hash = newBlock.calculateHash();
 		this.chain.add(newBlock);
 	}
+	
+	public boolean isChainValid(){
+		boolean res = true;
+		
+		for(int i = 1; i < this.chain.size(); i++) {
+			Block<T> currentBlock = this.chain.get(i);
+			Block<T> prevBlock = this.chain.get(i - 1);
+			if(!currentBlock.hash.equals(currentBlock.calculateHash())) {
+				res = false;
+				break;
+			}
+			
+			if(!currentBlock.previousHash.equals(prevBlock.hash)) {
+				res = false;
+				break;
+
+			}
+		}
+		
+		return res;
+	}
+	
+	public String toString() {
+		return this.chain.toString();
+	}
 }
