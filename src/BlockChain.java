@@ -21,4 +21,8 @@ public class BlockChain <T>{
 	public Block<T> getLatestBlock(){
 		return this.chain.get(this.chain.size() - 1);
 	}
+	
+	public void addBlock(Block<T> newBlock) {
+		
+	}
 }
