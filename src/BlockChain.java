@@ -23,6 +23,8 @@ public class BlockChain <T>{
 	}
 	
 	public void addBlock(Block<T> newBlock) {
-		
+		newBlock.previousHash = getLatestBlock().hash;
+		newBlock.hash = newBlock.calculateHash();
+		this.chain.add(newBlock);
 	}
 }
