@@ -26,7 +26,8 @@ public class Block <T>{
 		}catch(NoSuchAlgorithmException e) {
 			System.out.println(e.getMessage());
 		}
-		String text = this.index + this.previousHash + this.timeStamp + data.toString();
+		String dataString = this.data == null ? "null" : this.data.toString();
+		String text = this.index + this.previousHash + this.timeStamp + dataString;
 		
 		
 		try {
