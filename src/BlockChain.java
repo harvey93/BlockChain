@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BlockChain <T>{
 
-	ArrayList<Block<T>> chain;
+	private ArrayList<Block<T>> chain;
 	public BlockChain() {
 		this.chain = new ArrayList<>();
 		this.chain.add(createGenesisBlock());
@@ -16,5 +16,9 @@ public class BlockChain <T>{
 		LocalTime time = LocalTime.of(0, 0);
 		return new Block<T>(0, null, LocalDateTime.of(date, time), "0");
 
+	}
+	
+	public Block<T> getLatestBlock(){
+		return this.chain.get(this.chain.size() - 1);
 	}
 }
